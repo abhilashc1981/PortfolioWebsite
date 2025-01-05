@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>My Portfolio Site</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="all.min.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Abhilash Chandrashekar</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about-me">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="about-me">
+                <div id="aboutMeContainer">
+                    <div>
+                        <h2>About Me</h2>
+
+                        <p>Hi! I'm Abhilash Chandrashekar. I have about 15 years of experience in the software industry including about 10 years as a C# programmer. 
+                            I have worked for First American, Tyco, <span id="topCompany1">Dell</span>, Aricent, <span id="topCompany2">Target</span>, Beckman Coulter and Neudesic.</p>
+
+                        <p>Then, I took a break to raise my daughter and also to be a writer. I have published multiple romance books, a poetry chapbook and a kid's 
+                            storybook. I have also written around 200 articles on Medium and Substack.</p>
+
+                        <p>Now, with my daughter grown-up, I am training to be a full-stack developer to return to the software world.</p>
+
+                        <p>Fun fact! I have been programming for <span id="time-container"></span> seconds!</p>
+                    </div>
+                    <img src="./Abhilash.jpeg" alt="A photo of Abhilash Chandrashekar">
+                </div>
+            </section>
+
+            <section id="projects">
+
+                <h2>Projects</h2>
+
+                <details>
+                    <summary>
+                        <h3>Credit Card Validator</h3>
+                    </summary>
+                    <img src="./CreditCardValidator.png" alt="Screenshot of GitHub page of Credit Card 
+                    Validator project" class="projectImage">
+                    <p>Credit Card Validator implementing Luhn's algorithm</p>
+                </details>
+
+                <details>
+                    <summary>
+                        <h3>Microbe Simulator</h3>
+                    </summary>
+                    <img src="./MicrobeSimulator.png" alt="Screenshot of GitHub page of Microbe Simulator project" class="projectImage">
+                    <p>Microbe Simulator that simulates a 15 strand DNA microbe</p>
+                </details>
+
+                <details>
+                    <summary>
+                        <h3>JavaScript Class Library</h3>
+                    </summary>
+                    <img src="./JavaScriptClassLibrary.png" alt="Screenshot of GitHub page of JavaScript Class Library project" class="projectImage">
+                    <p>JavaScript Class Library with methods for different types</p>
+                </details>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <div id="skills-container">
+                    <i class="fab fa-html5"></i>
+                    <i class="fab fa-css3-alt"></i>
+                    <i class="fab fa-js"></i>
+                    <i class="fab fa-git"></i>
+                    <i class="fab fa-chrome"></i>
+                    <i class="fas fa-terminal"></i>
+                    <i class="fab fa-npm"></i>
+                    <i class="fab fa-node"></i>
+                    <i class="fab fa-github"></i>
+                </div>
+                
+            </section>
+        </main>
+
+        <script>
+            const timeContainer = document.getElementById("time-container");
+            const careerStartDay = "01-03-2005";
+            const careerStartDate = new Date(careerStartDay);
+
+            const internationalNumberFormatter = new Intl.NumberFormat("en-US");
+
+            setInterval(() => {
+                const now = new Date();
+                const difference = Math.floor((now.getTime() - careerStartDate.getTime()) / 1000);
+
+                timeContainer.innerText = internationalNumberFormatter.format(difference);
+            }, 1000);
+        </script>
+    </body>
+
+</html>
